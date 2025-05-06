@@ -32,7 +32,7 @@ const Calculadora = () => {
   };
 
   return (
-    <div>
+    <>
       {" "}
       Valor 1:
       <input value={valor1} onChange={e => setValor1(e.target.value)} />
@@ -48,7 +48,8 @@ const Calculadora = () => {
       <br></br>
       <button onClick={()=>calcular()}>Calcular</button> <br />
         {1 == 1 && resultado}
-    </div>
+      <br /><a href="/">Voltar</a>
+    </>
   );
 };
 
