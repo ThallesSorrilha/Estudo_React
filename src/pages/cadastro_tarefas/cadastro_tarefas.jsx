@@ -3,7 +3,13 @@ import "./cadastro_tarefas.css"
 
 const Cadastro_Tarefas = () => {
 
-    const [tarefa, setTarefa] = useState({id:0, descricao:'', data:''});
+    const [tarefa, setTarefa] = useState ({id:0, descricao:'', data:''});
+    const [tarefas, setTarefas] = useState([]);
+
+    useEffect(() => {
+            let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+            setTarefa({...tarefa, id: tarefas.length});
+    },[]);
 
     const atualizarValor = (event) => {
         setTarefa({...tarefa, [event.target.id]:event.target.value});

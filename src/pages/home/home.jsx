@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { data } from "react-router-dom";
 
 const Home = () => {
-    const[tarefas, setTarefas] = useState([]);
+    const [tarefas, setTarefas] = useState([]);
 
-    useEffect(() => {
+    useEffect(()=>{
         let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
         setTarefas(tarefas);
     },[]);
